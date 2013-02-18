@@ -1,0 +1,19 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+.settings/*
+.settings/*.prefs
+ownconfig
+
+.svn
+
+.DS_Store
+
+*.class
+dist/daily-log
+id_dsa
+known_hosts
