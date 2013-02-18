@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- @author tdtsh -->
+<!-- @brief ant build file -->
+<!-- @date 2007-04-25 -->
+<!-- @version $Id$ -->
+            
+<project name="com.tdtsh.merusen" default="help" basedir=".">
+    <property name="srcdir" location="./src" />
+    <property name="bindir" location="./bin" />
+    <property name="deploydir" location="./dist" />
+    <property name="libdir" location="./lib" />
+    <property name="docdir" location="./docs" />
+    <property name="package" value="com.tdtsh.merusen" />
+    <property name="resdir" value="./res" />
+    <property name="dbdir" value="./db" />
+    <property name="username" value="root" />
+    <property name="database.url" value="jdbc:postgresql://172.10.10.12:5432/mailmagazine" />
+    <property name="database.username" value="postgres" />
+	<property name="distDir" location="./dist" />
+
+
+	<path id="postgresql.class.path">
+		<pathelement location="${libdir}/postgresql.jar" />
+	</path>
+
+	<target name="create.table.mm">
+		<sql driver="org.postgresql.Driver"
+			url="${database.url}"
+			userid="${database.username}"
+			password="pasx"
+			>
+			<classpath>
+				<path refid="postgresql.class.path" />
+			</classpath>
+			<fileset dir="${dbdir} ">
+				<include name="databaseScript_ml_postgresql.sql" />
+			</fileset>
+		</sql>
+	</target>
+
+
+    <!-- 使い方表示 -->
+    <target name="help">
+    	<echo message=""/>
+        <echo message="コンパイル、JAR、configファイルをdistにコピーを実行する"/>
+    	<echo message="    ant all"/>
+    	<echo message=""/>
+        <echo message="javadocを生成する"/>
+        <echo message="    ant javadoc"/>
+    	<echo message=""/>
+        <echo message="メルマガ配信エンジン用に、PostgreSQLを初期化し、テストデータをInsert"/>
+        <echo message="    ant create.table.mm"/>
+    	<echo message=""/>
+    	<echo message=""/>
+
+    </target>
+
+    <target name="all" depends="help, compile, jar_init, jar_all, jar_destroy">
+    </target>
+
+    <!-- コンパイル################################################### -->
+    <target name="compile">
+        <mkdir dir="${bindir}" />
+        <!-- クラスパスの設定 -->
+        <path id="classpath">
+            <pathelement location="${libdir}" />
+            <pathelement location="${libdir}/log4j-1.2.8.jar" />
+            <pathelement location="${libdir}/activation.jar" />
+            <pathelement location="${libdir}/commons-logging.jar" />
+            <pathelement location="${libdir}/commons-net-1.2.2.jar" />
+            <pathelement location="${libdir}/mail.jar" />
+            <pathelement location="${libdir}/mailapi.jar" />
+            <pathelement location="${libdir}/smtp.jar" />
+            <pathelement location="${libdir}/msbase.jar" />
+            <pathelement location="${libdir}/mssqlserver.jar" />
+            <pathelement location="${libdir}/msutil.jar" />
+            <pathelement location="${libdir}/postgresql.jar" />
+            <pathelement location="${libdir}/mysql-connector-java-3.0.16-ga-bin.jar" />
+        </path>
+		<javac destdir="${bindir}" encoding="utf-8" 
+			deprecation="on" debug="on"
+            debuglevel="lines,vars,source" >
+        <src path="${srcdir}" />
+        <classpath refid="classpath"/>
+        </javac>
+    </target>
+
+
+    <!--
+    #####################################################################
+    jarファイル作成準備
+    #####################################################################
+    -->
+    <target name="jar_init" depends="compile">
+
+        <mkdir dir="${deploydir}" />
+
+        <unjar dest="${bindir}">
+            <fileset id="unj" dir="${libdir}">
+                <include name="log4j-1.2.8.jar" />
+                <include name="activation.jar" />
+                <include name="commons-net-1.2.2.jar" />
+                <include name="commons-logging.jar" />
+                <include name="junit.jar" />
+                <include name="mail.jar" />
+                <include name="mockobjects-jdk1.4-0.09.jar" />
+                <include name="msbase.jar" />
+                <include name="mssqlserver.jar" />
+                <include name="msutil.jar" />
+                <include name="mysql-connector-java-3.0.16-ga-bin.jar" />
+                <include name="ojdbc14.jar" />
+                <include name="postgresql.jar" />
+            </fileset>
+        </unjar>
+
+        <!-- msbase.jar, mssqlserver.jar, msutil.jar -->
+        <fileset id="sqlserver" dir="${bindir}">
+            <include name="com/microsoft/jdbc/**/*" />
+            <include name="com/microsoft/jdbcx/**/*" />
+            <include name="com/microsoft/util/**/*" />
+        </fileset>
+
+        <!-- log4j-1.2.8.jar -->
+        <fileset id="log4j" dir="${bindir}">
+            <include name="org/apache/log4j/*" />
+            <include name="org/apache/log4j/**/*" />
+        </fileset>
+
+        <!-- postgresql.jar -->
+        <fileset id="postgresql" dir="${bindir}">
+            <include name="org/postgresql/**/*" />
+        </fileset>
+
+        <!-- commons-logging.jar -->
+        <fileset id="logging" dir="${bindir}">
+            <include name="org/apache/commons/logging/*" />
+            <include name="org/apache/commons/logging/**/*" />
+        </fileset>
+
+        <fileset id="mailapi" dir="${bindir}">
+            <!-- activation.jar -->
+            <include name="com/sun/activation/**/*" />
+            <include name="javax/activation/**/*" />
+            <include name="META-INF/mailcap" />
+            <!-- mail.jar -->
+            <include name="com/sun/mail/**/*" />
+            <include name="com/sun/mail/util/**/*" />
+            <include name="javax/mail/**/*" />
+        </fileset>
+
+        <!--commons-net-1.2.2.jar-->
+        <fileset id="commonsnet" dir="${bindir}">
+            <include name="org/apache/commons/net/**/*" />
+        </fileset>
+
+        <!--mysql-connector-java-3.0.16-ga-bin.jar-->
+        <fileset id="mysql" dir="${bindir}">
+            <include name="org/gjt/mm/mysql/Driver.class"/>
+            <include name="com/mysql/jdbc/**/*"/>
+        </fileset>
+
+        <!--ojdbc14.jar-->
+        <fileset id="oracle" dir="${bindir}">
+            <include name="oracle/**/*"/>
+        </fileset>
+    </target>
+
+    <target name="jar_all" depends="jar_MailSenderAssembler">
+    </target>
+
+    <!-- jarファイル作成 MailSenderAssembler.jar ################################### -->
+    <target name="jar_MailSenderAssembler" depends="jar_init">
+        <!-- jarするファイルの設定 -->
+        <fileset id="jarMailSenderAssembler" dir="${bindir}">
+            <include name="com/tdtsh/merusen/mail/MailIf.class" />
+            <include name="com/tdtsh/merusen/mail/AbstractMail.class" />
+            <include name="com/tdtsh/merusen/mail/MailMagazine.class" />
+            <include name="com/tdtsh/merusen/mail/CommandLineMailSender.class" />
+            <include name="com/tdtsh/merusen/mail/MailSenderAssembler.class" />
+            <include name="com/tdtsh/merusen/database/AbstractDbCon.class" />
+            <include name="com/tdtsh/merusen/database/ConcreteDbCon.class" />
+            <include name="com/tdtsh/merusen/database/ConManager.class" />
+            <include name="com/tdtsh/merusen/database/PostgreSqlCon.class" />
+            <include name="com/tdtsh/merusen/util/DateUtil.class" />
+            <!--
+            <include name="com/tdtsh/merusen/database/MySqlCon.class" />
+            <include name="com/tdtsh/merusen/database/SqlServerCon.class" />
+            <include name="com/tdtsh/merusen/database/OracleCon.class" />
+            -->
+        </fileset>
+
+        <jar jarfile="${deploydir}/MailSenderAssembler.jar">
+            <fileset refid="jarMailSenderAssembler" />
+            <fileset refid="mailapi" />
+            <!--
+            <fileset refid="sqlserver" />
+            <fileset refid="oracle" />
+            <fileset refid="mysql" />
+            -->
+            <fileset refid="postgresql" />
+            <fileset refid="logging" />
+            <fileset refid="log4j" />
+            <manifest>
+                 <attribute name="Main-Class" 
+                     value="com.tdtsh.merusen.mail.MailSenderAssembler"/>
+                 <attribute name="Class-Path" value="."/>
+             </manifest>
+        </jar>
+    </target>
+
+    <!-- jarファイル作成終了処理 ########################################### -->
+    <target name="jar_destroy" >
+        <!-- delete unjar files -->
+        <delete dir="${bindir}/examples" />
+        <delete dir="${bindir}/com" />
+        <delete dir="${bindir}/javax" />
+        <delete dir="${bindir}/org" />
+        <delete dir="${bindir}/oracle" />
+        <delete dir="${bindir}/junit" />
+        <delete dir="${bindir}/junit3.8.1" />
+        <delete dir="${bindir}/META-INF" />
+        <delete file="${bindir}/COPYING" />
+        <delete file="${bindir}/README" />
+        <delete file="${bindir}/stylesheet.css" />
+    </target>
+
+    <!-- JavaDoc作成処理 ################################################## -->
+    <target name="javadoc" >
+        <mkdir dir="${docdir}" />
+        <javadoc sourcepath="./src" packagenames="com.tdtsh.merusen.**.*" 
+            destdir="${docdir}" encoding="utf-8" docencoding="utf-8"
+            private="yes" />
+    </target>
+
+
+
+
+</project>

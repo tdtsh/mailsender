@@ -10,6 +10,12 @@
 ownconfig
 
 docs/*.html
+docs/*.css
+docs/resources/*
+docs/package-list
+docs/com/tdtsh/merusen/*/*.html
+
+bin/*
 
 .svn
 
