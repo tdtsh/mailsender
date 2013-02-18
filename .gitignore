@@ -9,6 +9,8 @@
 .settings/*.prefs
 ownconfig
 
+docs/*.html
+
 .svn
 
 .DS_Store
