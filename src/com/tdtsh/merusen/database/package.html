@@ -1,0 +1,27 @@
+<html>
+<body>
+汎用データベース接続パッケージ
+<BR><BR>
+<p>
+汎用データベース接続パッケージ。<br>
+<BR><BR>
+実装方法は、Clientクラスを参照。
+<BR><BR>
+プロパティファイル( set.properties )を作成し、以下の項目を設
+定すること。<BR>
+dbTypeで、MySqlConクラス、PostgreSqlConクラス、SqlServerConク
+ラスを指定することで、RDBMSの切替が出来る。<BR>
+<BR><BR>
+#sys.db.dbType       = com.tdtsh.marusen.database.PostgreSqlCon
+#sys.db.dbType       = com.tdtsh.marusen.database.SqlServerCon
+sys.db.dbType       = com.tdtsh.marusen.database.MySqlCon
+sys.db.hostname = localhost<BR>
+sys.db.dbname = mailmagazine<BR>
+sys.db.user = slode<BR>
+sys.db.pass = mmuser<BR>
+sys.db.encoding = utf-8<BR>
+<BR><BR>
+<BR><BR>
+</p>
+</body>
+</html>

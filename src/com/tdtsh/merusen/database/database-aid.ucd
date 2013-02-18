@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="database-aid" size="945,1291" id="com.tdtsh.marusen.database" metadata="uml2-1.0" initialized="true" scrolledY="125" tag="10" key="323030353039323720736C6F77">
+  <children xsi:type="editmodel:ClassEditModel" name="Client" location="487,240" size="79,67" id="com.tdtsh.marusen.database/Client" runTimeClassModel="main([Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="52,18">
+      <children xsi:type="editmodel:MethodEditModel" name="main" location="755,445" id="com.tdtsh.marusen.database/Client#main([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.tdtsh.marusen.database/Client->com.tdtsh.marusen.database/ConcreteDbCon" source="//@children.0" target="//@children.7" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate»" size="61,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,33" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="141,83"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.tdtsh.marusen.database/Client->com.tdtsh.marusen.database/ConcreteDbCon" source="//@children.0" target="//@children.7" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,13" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="141,63"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="OracleCon" location="50,620" size="127,139" id="com.tdtsh.marusen.database/OracleCon" runTimeClassModel="OracleCon(),getConnect(),makeJdbcUri(),native2Unicode(Ljava.lang.String;),unicode2Native(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,90">
+      <children xsi:type="editmodel:MethodEditModel" name="OracleCon" location="18,29" id="com.tdtsh.marusen.database/OracleCon#OracleCon()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getConnect" id="com.tdtsh.marusen.database/OracleCon#getConnect()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="makeJdbcUri" id="com.tdtsh.marusen.database/OracleCon#makeJdbcUri()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="native2Unicode" id="com.tdtsh.marusen.database/OracleCon#native2Unicode(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="unicode2Native" id="com.tdtsh.marusen.database/OracleCon#unicode2Native(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.4/@sourceConnections.0 //@children.3/@sourceConnections.0" autoLocated="true" id="com.tdtsh.marusen.database/ConManager&lt;-com.tdtsh.marusen.database/OracleCon" source="//@children.1" target="//@children.5" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,373" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="MySqlCon" location="190,620" size="127,139" id="com.tdtsh.marusen.database/MySqlCon" runTimeClassModel="getConnect(),makeJdbcUri(),MySqlCon(),native2Unicode(Ljava.lang.String;),unicode2Native(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,90">
+      <children xsi:type="editmodel:MethodEditModel" name="MySqlCon" id="com.tdtsh.marusen.database/MySqlCon#MySqlCon()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getConnect" id="com.tdtsh.marusen.database/MySqlCon#getConnect()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="makeJdbcUri" id="com.tdtsh.marusen.database/MySqlCon#makeJdbcUri()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="native2Unicode" id="com.tdtsh.marusen.database/MySqlCon#native2Unicode(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="unicode2Native" id="com.tdtsh.marusen.database/MySqlCon#unicode2Native(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.tdtsh.marusen.database/ConManager&lt;-com.tdtsh.marusen.database/MySqlCon" source="//@children.2" target="//@children.1/@sourceConnections.0" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="SqlServerCon" location="487,620" size="130,139" id="com.tdtsh.marusen.database/SqlServerCon" runTimeClassModel="SqlServerCon(),getConnect(),makeJdbcUri(),native2Unicode(Ljava.lang.String;),unicode2Native(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,90">
+      <children xsi:type="editmodel:MethodEditModel" name="SqlServerCon" id="com.tdtsh.marusen.database/SqlServerCon#SqlServerCon()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getConnect" id="com.tdtsh.marusen.database/SqlServerCon#getConnect()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="makeJdbcUri" id="com.tdtsh.marusen.database/SqlServerCon#makeJdbcUri()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="native2Unicode" id="com.tdtsh.marusen.database/SqlServerCon#native2Unicode(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="unicode2Native" id="com.tdtsh.marusen.database/SqlServerCon#unicode2Native(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.tdtsh.marusen.database/ConManager&lt;-com.tdtsh.marusen.database/SqlServerCon" source="//@children.3" target="//@children.1/@sourceConnections.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="65,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PostgreSqlCon" location="330,620" size="136,139" id="com.tdtsh.marusen.database/PostgreSqlCon" runTimeClassModel="PostgreSqlCon(),getConnect(),makeJdbcUri(),native2Unicode(Ljava.lang.String;),unicode2Native(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,90">
+      <children xsi:type="editmodel:MethodEditModel" name="PostgreSqlCon" id="com.tdtsh.marusen.database/PostgreSqlCon#PostgreSqlCon()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getConnect" id="com.tdtsh.marusen.database/PostgreSqlCon#getConnect()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="makeJdbcUri" id="com.tdtsh.marusen.database/PostgreSqlCon#makeJdbcUri()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="native2Unicode" id="com.tdtsh.marusen.database/PostgreSqlCon#native2Unicode(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="unicode2Native" id="com.tdtsh.marusen.database/PostgreSqlCon#unicode2Native(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.tdtsh.marusen.database/ConManager&lt;-com.tdtsh.marusen.database/PostgreSqlCon" source="//@children.4" target="//@children.1/@sourceConnections.0" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="68,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.6/@sourceConnections.0" name="ConManager" location="50,30" size="127,373" id="com.tdtsh.marusen.database/ConManager" runTimeClassModel="getDbName(),setHostName(Ljava.lang.String;),setJdbcUri(Ljava.lang.String;),makeJdbcUri(),setDbName(Ljava.lang.String;),setJdbcClass(Ljava.lang.String;),setUserName(Ljava.lang.String;),native2Unicode(Ljava.lang.String;),setDbEncoding(Ljava.lang.String;),unicode2Native(Ljava.lang.String;),setPassword(Ljava.lang.String;),getDbEncoding(),getPassword(),getJdbcClass(),connect,getUserName(),getHostName(),getJdbcUri()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="58,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="connect" id="com.tdtsh.marusen.database/ConManager#connect"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,306">
+      <children xsi:type="editmodel:MethodEditModel" name="getDbEncoding" id="com.tdtsh.marusen.database/ConManager#getDbEncoding()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDbName" id="com.tdtsh.marusen.database/ConManager#getDbName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getHostName" id="com.tdtsh.marusen.database/ConManager#getHostName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getJdbcClass" id="com.tdtsh.marusen.database/ConManager#getJdbcClass()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getJdbcUri" id="com.tdtsh.marusen.database/ConManager#getJdbcUri()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPassword" id="com.tdtsh.marusen.database/ConManager#getPassword()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUserName" id="com.tdtsh.marusen.database/ConManager#getUserName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="makeJdbcUri" id="com.tdtsh.marusen.database/ConManager#makeJdbcUri()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="native2Unicode" id="com.tdtsh.marusen.database/ConManager#native2Unicode(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDbEncoding" id="com.tdtsh.marusen.database/ConManager#setDbEncoding(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDbName" id="com.tdtsh.marusen.database/ConManager#setDbName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setHostName" id="com.tdtsh.marusen.database/ConManager#setHostName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setJdbcClass" id="com.tdtsh.marusen.database/ConManager#setJdbcClass(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setJdbcUri" id="com.tdtsh.marusen.database/ConManager#setJdbcUri(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPassword" id="com.tdtsh.marusen.database/ConManager#setPassword(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setUserName" id="com.tdtsh.marusen.database/ConManager#setUserName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="unicode2Native" id="com.tdtsh.marusen.database/ConManager#unicode2Native(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.0" name="AbstractDbCon" location="280,30" size="135,85" id="com.tdtsh.marusen.database/AbstractDbCon" runTimeClassModel="getConnect(),resource">
+    <children xsi:type="editmodel:CompartmentEditModel" size="63,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="resource" id="com.tdtsh.marusen.database/AbstractDbCon#resource"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="85,18">
+      <children xsi:type="editmodel:MethodEditModel" name="getConnect" id="com.tdtsh.marusen.database/AbstractDbCon#getConnect()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.tdtsh.marusen.database/AbstractDbCon->com.tdtsh.marusen.database/ConManager" source="//@children.6" target="//@children.5" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,42" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="127,42"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.0/@sourceConnections.1" name="ConcreteDbCon" location="277,190" size="141,193" id="com.tdtsh.marusen.database/ConcreteDbCon" runTimeClassModel="setPassword(Ljava.lang.String;),setHostName(Ljava.lang.String;),loadProp(),getResource(),setDbName(Ljava.lang.String;),setUserName(Ljava.lang.String;),setDbType(Ljava.lang.String;),setDbEncoding(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="102,144">
+      <children xsi:type="editmodel:MethodEditModel" name="getResource" id="com.tdtsh.marusen.database/ConcreteDbCon#getResource()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="loadProp" id="com.tdtsh.marusen.database/ConcreteDbCon#loadProp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDbEncoding" id="com.tdtsh.marusen.database/ConcreteDbCon#setDbEncoding(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDbName" id="com.tdtsh.marusen.database/ConcreteDbCon#setDbName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDbType" id="com.tdtsh.marusen.database/ConcreteDbCon#setDbType(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setHostName" id="com.tdtsh.marusen.database/ConcreteDbCon#setHostName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPassword" id="com.tdtsh.marusen.database/ConcreteDbCon#setPassword(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setUserName" id="com.tdtsh.marusen.database/ConcreteDbCon#setUserName(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="com.tdtsh.marusen.database/AbstractDbCon&lt;-com.tdtsh.marusen.database/ConcreteDbCon" source="//@children.7" target="//@children.6" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="70,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="67,85"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:NotepadEditModel" location="125,430" size="66,31" fontInfo="Arial-8-0" note="Strategy"/>
+  <children xsi:type="editmodel:NotepadEditModel" location="385,130" size="103,24" fontInfo="Arial-8-0" note="TemplateMethod"/>
+  <children xsi:type="editmodel:NotepadEditModel" location="300,380" size="385,206" fontInfo="Arial-8-0" note="Generating Connection Object Utility Package&#xD;&#xA;&#xD;&#xA;see Client.java&#xD;&#xA;&#xD;&#xA;set class-path to JDBC driver (postgresql,oracle,mysql,mssqlserver)&#xD;&#xA;&#xD;&#xA;write set.porperties if you need&#xD;&#xA;&#xD;&#xA;database.ConcreteDbCon.dbType       = com.tdtsh.marusen.database.OracleCon&#xD;&#xA;database.ConcreteDbCon.hostname = 172.10.10.20&#xD;&#xA;database.ConcreteDbCon.dbname = sns&#xD;&#xA;database.ConcreteDbCon.user = crane&#xD;&#xA;database.ConcreteDbCon.pass = p*****&#xD;&#xA;database.ConcreteDbCon.encoding=none"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=7"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
