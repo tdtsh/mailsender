@@ -1,14 +1,11 @@
 # mailsender
 ==========
 
-メールの一斉送信をします。Linuxベースの環境(Mac OS Xでも可)があれば動きます（別途SMTPサーバが必要です）。phpを使った管理機能と、javaとRDBMSでEメールを一斉に送信するコマンドラインのバッジプログラムがあります。
-
+メールの一斉送信をします。Linuxベースの環境(Mac OS Xでも可)があれば動きます（SMTPサーバが必要です）。Apache + php + RDBMS(デフォはPostgresですがMySQLやOracle、SQLServer等にも対応可能の筈)を使った管理機能と、Eメールを一斉に送信するjavaのコマンドラインのバッジプログラムがあります。
 
 
 
 Mac OS X (Mountain Lion)でのインストール手順を書いておきます。
-
-
 
 
 
