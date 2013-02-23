@@ -1,5 +1,6 @@
 *.class
-
+MailSenderAssembler.jar
+dist/*.jar
 
 .settings/*
 .settings/*.prefs
